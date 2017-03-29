@@ -57,7 +57,7 @@ $api_call[] = 'api/hotfixes.json';
 
 
 //We need to initiate a session and get the authenticity_token from the logon page before we can actually login.
-$curl = curl_init($url_root . 'login');
+$curl = curl_init($url_root . 'pro_users/login');
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($curl, CURLOPT_HEADER, true);
 curl_setopt($curl, CURLOPT_COOKIEJAR, $cookie_file);
@@ -99,7 +99,7 @@ if($debugMode) {
 }
 
 //Initiate connection to Login page and send POST data
-$curl = curl_init($url_root . 'login');
+$curl = curl_init($url_root . 'pro_users/login');
 curl_setopt($curl, CURLOPT_POST, count($loginFields) + 1);
 curl_setopt($curl, CURLOPT_POSTFIELDS, $fields_string);
 curl_setopt($curl, CURLOPT_REFERER, $url_root . 'login');
